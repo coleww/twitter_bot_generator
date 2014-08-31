@@ -1,29 +1,16 @@
 # Twitter::Bot::Generator
 
-TODO: Write a gem description
+I GENERATE TWITTER BOTS! FUN!
 
 ## Installation
 
-Add this line to your application's Gemfile:
+    $ gem install twitter_bot_generator
 
-    gem 'twitter-bot-generator'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install twitter-bot-generator
 
 ## Usage
 
-TODO: Write usage instructions here
+    $ twitter_bot_generator markov_bot
 
 ## Contributing
 
-1. Fork it ( https://github.com/[my-github-username]/twitter-bot-generator/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create a new Pull Request
+    This is part of the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial)
