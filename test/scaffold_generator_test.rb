@@ -10,4 +10,9 @@ class TestTwitterBotGenerator <  MiniTest::Test
     assert_respond_to TwitterBotGenerator, :generate
   end
 
+  def test_it_creates_a_folder
+    TwitterBotGenerator.generate 'such_test_bot'
+    assert_equal true, (Dir.exists? './such_test_bot')
+  end
+
 end
