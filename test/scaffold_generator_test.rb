@@ -2,13 +2,16 @@ require 'minitest/autorun'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-require 'fakefs'
+# can't run the generated bot tests in fakefs for some reason
+# require 'fakefs'
 
 require_relative "../lib/twitter_bot_generator.rb"
 
-# BEFORE :all DO |o|
-  TwitterBotGenerator.generate 'such_test_bot'
-# END :EVERYTHING
+# before :all do
+TwitterBotGenerator.generate 'such_test_bot'
+
+# Running the test suite for the generated bot
+require_relative '../such_test_bot/test/such_test_bot_test.rb'
 
 class TestTwitterBotGenerator <  MiniTest::Test
 
