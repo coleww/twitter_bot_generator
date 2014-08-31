@@ -1,7 +1,7 @@
 # twitter_bot_generator
 
 I GENERATE TWITTER BOTS! FUN!
-r
+
 ## Installation
 
     $ gem install twitter_bot_generator
@@ -16,8 +16,12 @@ r
 
 ## TODO
 
+    add help dialog
+
     handle CLI errors better
 
-    --markov flag. chuck .txt in lib and set it loose
+    --markov flag. chuck .txt in lib and then set it loose
 
-    --db flag to get a mini AR::Base thing
+    --db flag to get a mini AR::Base thing. migrations? HOW TO DO THAT.
+
+    --no-tests cuz sometimes, like, y? uno?
