@@ -2,5 +2,8 @@
 
 require 'twitter_bot_generator'
 
-puts 'ALPHA MODE WHY ARE YOU RUNNING THIS WHAT?'
-TwitterBotGenerator.generate ARGV[0]
+begin
+  TwitterBotGenerator.generate ARGV[0].gsub('-', '_')
+rescue
+  puts 'something horrible has happened'
+end
