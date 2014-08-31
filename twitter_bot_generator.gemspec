@@ -14,7 +14,7 @@ Gem::Specification.new do |spec|
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
-  spec.executables   = ['twitter_bot_generator.rb']
+  # spec.executables   = ['twitter_bot_generator.rb']
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
