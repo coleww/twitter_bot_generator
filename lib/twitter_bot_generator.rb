@@ -6,12 +6,15 @@ class TwitterBotGenerator
 
     def generate bot_name
       puts "scaffolding a twitter bot that is named #{bot_name}!"
-      puts "mkdir #{(Dir.mkdir bot_name)[0]}"
+      Dir.mkdir bot_name
+      dirname = "#{bot_name}/"
+      puts "mkdir #{dirname}"
       folders.each do |folder|
-        puts "mkdir #{(Dir.mkdir bot_name + '/' + folder)[0]}"
+        Dir.mkdir dirname + folder
+        puts "mkdir #{dirname + folder}"
       end
       (files bot_name).each do |(file_name, contents)|
-        puts "touch #{bot_name}/#{file_name}"
+        puts "touch #{dirname}#{file_name}"
         File.open bot_name + '/' + file_name, 'w' do |f|
           f.write contents
         end
