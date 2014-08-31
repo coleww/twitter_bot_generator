@@ -92,7 +92,7 @@ class TestTwitterBotGenerator <  MiniTest::Test
 
 end
 
-MiniTest::Unit.after_run do
+MiniTest::Unit.after_tests do
   ['./such_test_bot/Gemfile',
     './such_test_bot/README.md',
     './such_test_bot/test.rb',
