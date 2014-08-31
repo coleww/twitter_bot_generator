@@ -3,4 +3,4 @@
 require 'twitter_bot_generator'
 
 
-# ...
+puts "Hello #{ARGV[0]}!"
