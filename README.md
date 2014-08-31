@@ -8,6 +8,10 @@ I GENERATE TWITTER BOTS! FUN!
 
     handle CLI errors
 
+    --markov flag. chuck .txt in lib and set it loose
+
+    --db flag to get a mini AR::Base thing
+
 ## Installation
 
     $ gem install twitter_bot_generator
