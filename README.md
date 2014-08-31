@@ -6,10 +6,9 @@ I GENERATE TWITTER BOTS! FUN!
 
     $ gem install twitter_bot_generator
 
-
 ## Usage
 
-    $ twitter_bot_generator markov_bot
+    $ twitter_bot_generator YR_BOT_NAME
 
 ## Contributing
 
