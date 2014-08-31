@@ -8,13 +8,13 @@ Gem::Specification.new do |spec|
   spec.version       = TwitterBotGenerator::VERSION
   spec.authors       = ["Cole Willsea"]
   spec.email         = ["coleww@gmail.com"]
-  spec.summary       = %q{Generates a twitter bot template from command line.}
-  spec.description   = %q{gem install twitter-bot-generator && twitter-bot-generator new_twitter_bot}
+  spec.summary       = %q{WIP DONUT USE! Generates a twitter bot template from command line.}
+  spec.description   = %q{WIP DONUT USE! gem install twitter_bot_generator && twitter_bot_generator new_twitter_bot}
   spec.homepage      = ""
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
-  spec.executables   = ['twitter_bot_generator.rb']
+  spec.executables   = ['twitter_bot_generator']
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
@@ -22,5 +22,4 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake"
   spec.add_development_dependency 'test_construct'
   spec.add_development_dependency 'minitest'
-  spec.add_development_dependency 'fakefs'
 end

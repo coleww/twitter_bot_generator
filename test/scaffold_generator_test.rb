@@ -2,9 +2,6 @@ require 'minitest/autorun'
 require 'minitest/autorun'
 require 'minitest/pride'
 
-# can't run the generated bot tests in fakefs for some reason
-# require 'fakefs'
-
 require_relative "../lib/twitter_bot_generator.rb"
 
 # before :all do
