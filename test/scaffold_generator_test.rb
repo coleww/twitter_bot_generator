@@ -66,4 +66,9 @@ class TestTwitterBotGenerator <  MiniTest::Test
     assert_equal true, (File.exists? './such_test_bot/lib/.gitkeep')
   end
 
+  def test_camelize
+    klass = TwitterBotGenerator.send :camelize, 'testing_the_thing'
+    assert_equal 'TestingTheThing', klass
+  end
+
 end
