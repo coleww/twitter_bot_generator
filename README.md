@@ -1,7 +1,7 @@
-# Twitter::Bot::Generator
+# twitter_bot_generator
 
 I GENERATE TWITTER BOTS! FUN!
-
+r
 ## Installation
 
     $ gem install twitter_bot_generator
