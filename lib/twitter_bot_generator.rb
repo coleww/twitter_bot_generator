@@ -7,7 +7,7 @@ class TwitterBotGenerator
   class << self
 
     def generate bot_name
-
+      Dir.mkdir bot_name
 
 
 
