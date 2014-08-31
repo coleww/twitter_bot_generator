@@ -5,7 +5,7 @@ class TwitterBotGenerator
   class << self
 
     def generate bot_name
-      puts "scaffolding a twitter bot name #{bot_name}!"
+      puts "scaffolding a twitter bot that is named #{bot_name}!"
       puts "mkdir #{(Dir.mkdir bot_name)[0]}"
       folders.each do |folder|
         puts "mkdir #{(Dir.mkdir bot_name + '/' + folder)[0]}"
@@ -16,6 +16,12 @@ class TwitterBotGenerator
           f.write contents
         end
       end
+      puts 'done generating! your turn now!'
+      puts "$ cd #{bot_name}"
+      puts '$ bundle install'
+      puts '$ ./test.rb'
+      puts '$ ./spec.rb'
+      puts 'HAVE FUN BE SAFE PLAY NICE'
     end
 
   private
@@ -32,8 +38,8 @@ class TwitterBotGenerator
         'Procfile' => "bot: ruby bot.rb\n",
         'spec.rb' => "#!/usr/bin/env ruby\nrequire_relative 'src/#{bot_name}'\n12.times { puts #{camelize bot_name}.generate }",
         'test.rb' => "#!/usr/bin/env ruby\n\nDir.glob('./test/*_test.rb').each { |file| require file }",
-        "test/#{bot_name}_test.rb" => "require 'minitest/autorun'\nrequire_relative '../src/#{camelize bot_name}.rb'\n\nclass Test#{camelize bot_name} <  MiniTest::Test\n  def test_generate_returns_hello_world\n    assert_equal 'Hello World!', TwitterBot.generate\n  end\nend",
-        "src/#{bot_name}.rb" => '',
+        "test/#{bot_name}_test.rb" => "require 'minitest/autorun'\nrequire_relative '../src/#{camelize bot_name}.rb'\n\nclass Test#{camelize bot_name} <  MiniTest::Test\n  def test_generate_returns_hello_world\n    assert_equal 'Hello World!', TwitterBot.generate\n  end\ndef test_hides_greetings\n    refute_respond_to TwitterBot, :greetings\n  end\ndef test_hides_io_metal\n    refute_respond_to TwitterBot, :load_txt_file\n  end\nend",
+        "src/#{bot_name}.rb" => "class #{camelize bot_name}\n\n  class << self\n\n    def generate\n      greetings.sample\n    end\n\n  protected\n\n    def greetings\n      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']\n    end\n\n  private\n\n    def load_txt_file file_name\n      (File.readlines (File.join (File.dirname __FILE__), "..", 'lib', file_name)).map &:chomp\n    end\n\n  end\n\nend\n",
         'lib/.gitkeep' => 'lol'
       }
     end
