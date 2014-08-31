@@ -4,11 +4,11 @@ require 'minitest/pride'
 require 'fakefs'
 require_relative "../lib/twitter_bot_generator.rb"
 
-class TestTwitterBotGenerator <  MiniTest::Test
+# BEFORE :all DO |o|
+  TwitterBotGenerator.generate 'such_test_bot'
+# END :EVERYTHING
 
-  def setup
-    TwitterBotGenerator.generate 'such_test_bot'
-  end
+class TestTwitterBotGenerator <  MiniTest::Test
 
   def test_it_creates_an_app_directory
     assert_equal true, (Dir.exists? './such_test_bot')
@@ -20,10 +20,6 @@ class TestTwitterBotGenerator <  MiniTest::Test
 
   def test_it_creates_a_src_directory
     assert_equal true, (Dir.exists? './such_test_bot/src')
-  end
-
-  def test_it_creates_src_helper_dir
-    assert_equal true, (Dir.exists? './such_test_bot/src/such_test_bot')
   end
 
   def test_it_creates_a_test_directory
