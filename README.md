@@ -2,6 +2,12 @@
 
 I GENERATE TWITTER BOTS! FUN!
 
+## TODO
+
+    get bin/CLI working
+
+    handle CLI errors
+
 ## Installation
 
     $ gem install twitter_bot_generator
