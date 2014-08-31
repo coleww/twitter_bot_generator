@@ -91,6 +91,7 @@ class TestTwitterBotGenerator <  MiniTest::Test
   end
 
 end
+
 MiniTest::Unit.after_run do
   ['./such_test_bot/Gemfile',
     './such_test_bot/README.md',
@@ -101,14 +102,10 @@ MiniTest::Unit.after_run do
     './such_test_bot/test/such_test_bot_test.rb',
     './such_test_bot/lib/.gitkeep',
     './such_test_bot/src/such_test_bot.rb',
-    './such_test_bot/.gitignore'].all? do |file|
-      File.unlink file
-  end
+    './such_test_bot/.gitignore'].each { |file| File.unlink file }
 
   ['./such_test_bot/lib',
     './such_test_bot/src',
     './such_test_bot/test',
-    './such_test_bot'].all? do |dir|
-      Dir.rmdir dir
-  end
+    './such_test_bot'].each { |dir| Dir.rmdir dir }
 end
