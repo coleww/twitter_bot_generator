@@ -25,6 +25,7 @@ class TwitterBotGenerator
     end
 
   private
+
     def folders
       %w(lib src test)
     end
