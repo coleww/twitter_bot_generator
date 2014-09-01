@@ -2,7 +2,7 @@
 
 ### wip no docs have fun lol!
 
-I GENERATE TWITTER BOTS! FUN!
+#### I GENERATE TWITTER BOTS! RUBY IS JOY!
 
 ## Installation
 
@@ -11,10 +11,12 @@ I GENERATE TWITTER BOTS! FUN!
 ## Usage
 
     $ twitter_bot_generator yr_bot_name_snake_case_style_yes
+    
+This will create a skeleton class named YrBotNameSnakeCaseStyleYes, some smokescreen minitest::unit tests, and a variety of other "ruby app on free heroku instance" boiler plate.
 
-    This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial)
+You will need to manually set the config variables with yr twitter api keys on heroku for deployment. For development I recommend writing some minitests or just doing it manually on the command line if the bot is simple enough. Testing the bot "live" can run into potential "twitter banning yr bot before 
 
-    More stuff coming soon :dancers:
+This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) and more details and documentation and such will be there when things happen. :dancers:
 
 ## TODO
 
