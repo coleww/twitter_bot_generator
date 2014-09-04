@@ -45,6 +45,7 @@ class TwitterBotGenerator
         "test/#{bot_name}_test.rb" => "require 'minitest/autorun'\nrequire_relative '../src/#{bot_name}.rb'\n\nclass Test#{camelize bot_name} <  MiniTest::Test\n  def test_generate_returns_hello_world\n    assert_match /Hello/, #{camelize bot_name}.generate\n  end\n  def test_hides_greetings\n    refute_respond_to #{camelize bot_name}, :greetings\n  end\n  def test_hides_io_metal\n    refute_respond_to #{camelize bot_name}, :load_txt_file\n  end\nend",
         "src/#{bot_name}.rb" => "class #{camelize bot_name}\n\n  class << self\n\n    def generate\n      greetings.sample\n    end\n\n  protected\n\n    def greetings\n      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']\n    end\n\n  private\n\n    def load_txt_file file_name\n      (File.readlines (File.join 'lib', file_name)).map &:strip\n    end\n\n  end\n\nend\n",
         'lib/.gitkeep' => 'lol'
+      }
     end
 
     def camelize str
