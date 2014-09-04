@@ -18,6 +18,8 @@ I GENERATE TWITTER BOTS! FUN!
 
 ## TODO
 
+    ADD test for load lines, push greetings to a txt file, etc.
+
     add help dialog
 
     docs on getting/setting twitter keys? heroku deployment? (link to tut?)
