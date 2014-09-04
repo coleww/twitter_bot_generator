@@ -1,6 +1,6 @@
 # twitter_bot_generator
 
-### wip no docs have fun lol!
+[watch this terrible hour long clicky screencast to see it in action!](https://vimeo.com/105286654)
 
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
 
