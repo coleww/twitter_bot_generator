@@ -18,20 +18,7 @@ You will need to manually set the config variables with yr twitter api keys on h
 
 This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) and more details and documentation and such will be there when things happen. :dancers:
 
-## TODO
+## Contribute
 
-    ADD test for load lines, push greetings to a txt file, etc.
-
-    add help dialog
-
-    docs on getting/setting twitter keys? heroku deployment? (link to tut?)
-
-    handle CLI errors better
-
-    --markov flag. chuck .txt in lib and then set it loose
-
-    --db flag to get a mini AR::Base thing. migrations? HOW TO DO THAT.
-
-    --no-tests cuz sometimes, like, y? uno?
-
-    --streaming. set up a simple regex listener thing on timeline or gardenhose
+    all kinds of issues in the thing to the upper right! => 
+    comment on something if it sounds cool to u
