@@ -1,4 +1,7 @@
 require_relative 'twitter_bot_generator/version.rb'
+require 'erb'
+
+require 'ostruct'
 
 class TwitterBotGenerator
 
@@ -35,7 +38,7 @@ class TwitterBotGenerator
 
     def files bot_name
       {
-        'bot.rb' => "require_relative 'src/#{bot_name}.rb'\nrequire 'twitter'\ntwitter = Twitter::REST::Client.new do |config|\n  config.consumer_key = ENV['TWITTER_CONSUMER_KEY']\n  config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']\n  config.access_token = ENV['TWITTER_ACCESS_TOKEN']\n  config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']\nend\n\nloop do\n  begin\n    twitter.update #{camelize bot_name}.generate\n  ensure\n    sleep 10800 + (rand 5400)\n  end\nend\n",
+        'bot.rb' => ERB.new(File.read(File.join(File.expand_path(File.dirname(__FILE__)), '/twitter_bot_generator/templates/bot.rb.erb')), nil, "%").result(binding.local_variable_set(:bot_name, bot_name)),
         '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
         'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
         'README.md' => "\# #{bot_name}\nA Twitter Bot",
