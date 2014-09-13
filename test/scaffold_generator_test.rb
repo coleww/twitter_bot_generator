@@ -1,16 +1,4 @@
-require 'minitest/autorun'
-require 'minitest/autorun'
-require 'minitest/pride'
-require 'coveralls'
-Coveralls.wear!
-
-require_relative "../lib/twitter_bot_generator.rb"
-
-# before :all do
-TwitterBotGenerator.generate 'such_test_bot'
-
-# Running the test suite for the generated bot
-require_relative '../such_test_bot/test/such_test_bot_test.rb'
+require_relative 'test_helper'
 
 class TestTwitterBotGenerator <  MiniTest::Test
 
@@ -79,9 +67,9 @@ class TestTwitterBotGenerator <  MiniTest::Test
     assert_match /def generate/, (File.read './such_test_bot/src/such_test_bot.rb')
   end
 
-  def test_it_creates_bin_slash_gitkeep
-    assert_equal true, (File.exists? './such_test_bot/lib/.gitkeep')
-    assert_match /lol/, (File.read './such_test_bot/lib/.gitkeep')
+  def test_it_creates_lib_slash_greetings
+    assert_equal true, (File.exists? './such_test_bot/lib/greetings.txt')
+    assert_match /Hello World!/, (File.read './such_test_bot/lib/greetings.txt')
   end
 
   def test_camelize
@@ -91,20 +79,3 @@ class TestTwitterBotGenerator <  MiniTest::Test
 
 end
 
-MiniTest::Unit.after_tests do
-  ['./such_test_bot/Gemfile',
-    './such_test_bot/README.md',
-    './such_test_bot/test.rb',
-    './such_test_bot/Procfile',
-    './such_test_bot/bot.rb',
-    './such_test_bot/spec.rb',
-    './such_test_bot/test/such_test_bot_test.rb',
-    './such_test_bot/lib/.gitkeep',
-    './such_test_bot/src/such_test_bot.rb',
-    './such_test_bot/.gitignore'].each { |file| File.unlink file }
-
-  ['./such_test_bot/lib',
-    './such_test_bot/src',
-    './such_test_bot/test',
-    './such_test_bot'].each { |dir| Dir.rmdir dir }
-end

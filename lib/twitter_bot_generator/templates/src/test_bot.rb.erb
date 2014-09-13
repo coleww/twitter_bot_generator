@@ -9,7 +9,7 @@ class <%= class_name %>
   protected
 
     def greetings
-      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']
+      @greetings ||= load_txt_file 'greetings.txt'
     end
 
   private
