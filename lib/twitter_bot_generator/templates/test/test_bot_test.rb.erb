@@ -1,4 +1,6 @@
 require 'minitest/autorun'
+require 'minitest/pride'
+
 require_relative '../src/<%= bot_name %>.rb'
 
 class Test<%= class_name %> <  MiniTest::Test
@@ -9,10 +11,12 @@ class Test<%= class_name %> <  MiniTest::Test
 
   def test_hides_greetings
     refute_respond_to <%= class_name %>, :greetings
+    assert_instance_of String, <%= class_name %>.send(:greetings)[0]
   end
 
   def test_hides_io_metal
     refute_respond_to <%= class_name %>, :load_txt_file
+    assert_equal 3, <%= class_name %>.send(:load_txt_file, 'greetings.txt').length
   end
 
 end
