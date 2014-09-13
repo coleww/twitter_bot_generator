@@ -29,16 +29,16 @@ class TwitterBotGenerator
       puts 'HAVE FUN BE SAFE PLAY NICE'
     end
 
-  private
+  protected
 
     def folders
       %w(lib src test)
     end
 
     def files bot_name
-      variablez = OpenStruct.new(bot_name: bot_name, class_name: camelize(bot_name))
+      variablez = OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
       {
-        'bot.rb' => ERB.new(File.read(File.join(File.expand_path(File.dirname(__FILE__)), '/twitter_bot_generator/templates/bot.rb.erb')), nil, "%").result(variablez.instance_eval { binding }),
+        'bot.rb' => get_template('bot.rb').result(variablez.instance_eval { binding }),
         '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
         'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
         'README.md' => "\# #{bot_name}\nA Twitter Bot",
@@ -51,8 +51,21 @@ class TwitterBotGenerator
       }
     end
 
+  private
+
     def camelize str
       ((str.split '_').map &:capitalize).join
+    end
+
+    def get_template file_name
+      template = read_file file_name
+      ERB.new template, nil, "%"
+    end
+
+    def read_file file_name
+      home_sweet_home = File.expand_path File.dirname __FILE__
+      ultimate_pathway = File.join home_sweet_home, '/twitter_bot_generator/templates/', "#{file_name}.erb"
+      File.read ultimate_pathway
     end
 
   end
