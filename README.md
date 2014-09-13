@@ -60,13 +60,9 @@ Once your bot has been well tested on the command line you'll need to get it out
 
 ```
 heroku create
-
 heroku config:set TWITTER_CONSUMER_KEY=INSERT-YR-SECRETS-HERE
-
 heroku config:set TWITTER_CONSUMER_SECRET=INSERT-YR-SECRETS-HERE
-
 heroku config:set TWITTER_ACCESS_TOKEN=INSERT-YR-SECRETS-HERE
-
 heroku config:set TWITTER_ACCESS_SECRET=INSERT-YR-SECRETS-HERE
  ```
 
