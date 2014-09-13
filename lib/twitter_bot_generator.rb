@@ -1,6 +1,5 @@
 require_relative 'twitter_bot_generator/version.rb'
 require 'erb'
-
 require 'ostruct'
 
 class TwitterBotGenerator
@@ -37,8 +36,9 @@ class TwitterBotGenerator
     end
 
     def files bot_name
+      variablez = OpenStruct.new(bot_name: bot_name, class_name: camelize(bot_name))
       {
-        'bot.rb' => ERB.new(File.read(File.join(File.expand_path(File.dirname(__FILE__)), '/twitter_bot_generator/templates/bot.rb.erb')), nil, "%").result(binding.local_variable_set(:bot_name, bot_name)),
+        'bot.rb' => ERB.new(File.read(File.join(File.expand_path(File.dirname(__FILE__)), '/twitter_bot_generator/templates/bot.rb.erb')), nil, "%").result(variablez.instance_eval { binding }),
         '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
         'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
         'README.md' => "\# #{bot_name}\nA Twitter Bot",

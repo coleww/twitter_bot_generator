@@ -9,7 +9,7 @@ twitter = Twitter::REST::Client.new do |config|
 
 loop do
   begin
-    twitter.update <%= camelize bot_name %>.generate
+    twitter.update <%= class_name %>.generate
   ensure
     sleep 10800 + (rand 5400)
   end
