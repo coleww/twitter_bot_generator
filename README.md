@@ -8,33 +8,35 @@
 
 ## Usage
 
-    $ twitter_bot_generator --help
-    twitter_bot_generator <yr_bots_name_camel_cased>
-    ## creates a new directory called <yr_bots_name_camel_cased> in the current working directory,
-    and fills it with a bunch of boilerplate goodness
+```
+$ twitter_bot_generator --help
+twitter_bot_generator <yr_bots_name_camel_cased>
+## creates a new directory called <yr_bots_name_camel_cased> in the current working directory,
+and fills it with a bunch of boilerplate goodness
 
-    $ twitter_bot_generator wat_fun
-    scaffolding a twitter bot that is named wat_fun!
-    mkdir wat_fun/
-    mkdir wat_fun/lib
-    mkdir wat_fun/src
-    mkdir wat_fun/test
-    touch wat_fun/bot.rb
-    touch wat_fun/.gitignore
-    touch wat_fun/Gemfile
-    touch wat_fun/README.md
-    touch wat_fun/Procfile
-    touch wat_fun/spec.rb
-    touch wat_fun/test.rb
-    touch wat_fun/test/wat_fun_test.rb
-    touch wat_fun/src/wat_fun.rb
-    touch wat_fun/lib/greetings.txt
-    done generating! your turn now!
-    $ cd wat_fun
-    $ bundle install
-    $ ./test.rb
-    $ ./spec.rb
-    HAVE FUN BE SAFE PLAY NICE
+$ twitter_bot_generator wat_fun
+scaffolding a twitter bot that is named wat_fun!
+mkdir wat_fun/
+mkdir wat_fun/lib
+mkdir wat_fun/src
+mkdir wat_fun/test
+touch wat_fun/bot.rb
+touch wat_fun/.gitignore
+touch wat_fun/Gemfile
+touch wat_fun/README.md
+touch wat_fun/Procfile
+touch wat_fun/spec.rb
+touch wat_fun/test.rb
+touch wat_fun/test/wat_fun_test.rb
+touch wat_fun/src/wat_fun.rb
+touch wat_fun/lib/greetings.txt
+done generating! your turn now!
+$ cd wat_fun
+$ bundle install
+$ ruby test.rb
+$ ruby spec.rb
+HAVE FUN BE SAFE PLAY NICE
+```
 
 This will create a skeleton class named YrBotNameSnakeCaseStyleYes, some smokescreen minitest::unit tests, and a variety of other "ruby app on free heroku instance" boiler plate.
 
