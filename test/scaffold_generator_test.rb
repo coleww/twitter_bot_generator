@@ -1,6 +1,8 @@
 require 'minitest/autorun'
 require 'minitest/autorun'
 require 'minitest/pride'
+require 'coveralls'
+Coveralls.wear!
 
 require_relative "../lib/twitter_bot_generator.rb"
 
