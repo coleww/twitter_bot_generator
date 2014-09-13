@@ -36,9 +36,9 @@ class TwitterBotGenerator
     end
 
     def files bot_name
-      variablez = OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
+      varz = grab_a_binding_for bot_name
       {
-        'bot.rb' => get_template('bot.rb').result(variablez.instance_eval { binding }),
+        'bot.rb' => (render_code 'bot.rb', varz),
         '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
         'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
         'README.md' => "\# #{bot_name}\nA Twitter Bot",
@@ -49,6 +49,14 @@ class TwitterBotGenerator
         "src/#{bot_name}.rb" => "class #{camelize bot_name}\n\n  class << self\n\n    def generate\n      greetings.sample\n    end\n\n  protected\n\n    def greetings\n      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']\n    end\n\n  private\n\n    def load_txt_file file_name\n      (File.readlines (File.join 'lib', file_name)).map &:strip\n    end\n\n  end\n\nend\n",
         'lib/.gitkeep' => 'lol'
       }
+    end
+
+    def grab_a_binding_for bot_name
+      OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
+    end
+
+    def render_code file_name, varz
+      get_template(file_name).result(varz.instance_eval { binding })
     end
 
   private
