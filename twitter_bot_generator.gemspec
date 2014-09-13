@@ -8,9 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = TwitterBotGenerator::VERSION
   spec.authors       = ["Cole Willsea"]
   spec.email         = ["coleww@gmail.com"]
-  spec.summary       = %q{WIP DONUT USE! Generates a twitter bot template from command line.}
-  spec.description   = %q{WIP DONUT USE! gem install twitter_bot_generator && twitter_bot_generator new_twitter_bot}
-  spec.homepage      = ""
+  spec.summary       = %q{Generates a twitter bot template from command line.}
+  spec.description   = %q{gem install twitter_bot_generator && twitter_bot_generator new_twitter_bot}
+  spec.homepage      = "https://github.com/coleww/twitter_bot_generator"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")

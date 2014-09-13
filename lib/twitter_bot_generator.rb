@@ -1,4 +1,6 @@
 require_relative 'twitter_bot_generator/version.rb'
+require 'erb'
+require 'ostruct'
 
 class TwitterBotGenerator
 
@@ -27,29 +29,52 @@ class TwitterBotGenerator
       puts 'HAVE FUN BE SAFE PLAY NICE'
     end
 
-  private
+  protected
 
     def folders
       %w(lib src test)
     end
 
     def files bot_name
+      varz = grab_a_binding_for bot_name
       {
-        'bot.rb' => "require_relative 'src/#{bot_name}.rb'\nrequire 'twitter'\ntwitter = Twitter::REST::Client.new do |config|\n  config.consumer_key = ENV['TWITTER_CONSUMER_KEY']\n  config.consumer_secret = ENV['TWITTER_CONSUMER_SECRET']\n  config.access_token = ENV['TWITTER_ACCESS_TOKEN']\n  config.access_token_secret = ENV['TWITTER_ACCESS_SECRET']\nend\n\nloop do\n  begin\n    twitter.update #{camelize bot_name}.generate\n  ensure\n    sleep 10800 + (rand 5400)\n  end\nend\n",
-        '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
-        'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
-        'README.md' => "\# #{bot_name}\nA Twitter Bot\n\n[Template created with Twitter_Bot_Generator#{}](https://github.com/coleww/twitter_bot_generator)",
-        'Procfile' => "bot: ruby bot.rb\n",
-        'spec.rb' => "#!/usr/bin/env ruby\nrequire_relative 'src/#{bot_name}'\n12.times { puts #{camelize bot_name}.generate }",
-        'test.rb' => "#!/usr/bin/env ruby\n\nDir.glob('./test/*_test.rb').each { |file| require file }",
-        "test/#{bot_name}_test.rb" => "require 'minitest/autorun'\nrequire_relative '../src/#{bot_name}.rb'\n\nclass Test#{camelize bot_name} <  MiniTest::Test\n  def test_generate_returns_hello_world\n    assert_match /Hello/, #{camelize bot_name}.generate\n  end\n  def test_hides_greetings\n    refute_respond_to #{camelize bot_name}, :greetings\n  end\n  def test_hides_io_metal\n    refute_respond_to #{camelize bot_name}, :load_txt_file\n  end\nend",
-        "src/#{bot_name}.rb" => "class #{camelize bot_name}\n\n  class << self\n\n    def generate\n      greetings.sample\n    end\n\n  protected\n\n    def greetings\n      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']\n    end\n\n  private\n\n    def load_txt_file file_name\n      (File.readlines (File.join 'lib', file_name)).map &:strip\n    end\n\n  end\n\nend\n",
+        'bot.rb' => (render_code 'bot.rb', varz),
+        '.gitignore' => (render_code '.gitignore', varz),
+        'Gemfile' => (render_code 'Gemfile', varz),
+        'README.md' => (render_code 'README.md', varz),
+        'Procfile' => (render_code 'Procfile', varz),
+        'spec.rb' => (render_code 'spec.rb', varz),
+        'test.rb' => (render_code 'test.rb', varz),
+        "test/#{bot_name}_test.rb" => (render_code 'test/test_bot_test.rb', varz),
+        "src/#{bot_name}.rb" => (render_code 'src/test_bot.rb', varz),
         'lib/.gitkeep' => 'lol'
       }
     end
 
+    def grab_a_binding_for bot_name
+      openstructicon = OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
+      openstructicon.instance_eval { binding }
+    end
+
+    def render_code file_name, varz
+      (get_template file_name).result varz
+    end
+
+  private
+
     def camelize str
       ((str.split '_').map &:capitalize).join
+    end
+
+    def get_template file_name
+      template = read_file file_name
+      ERB.new template, nil, "%"
+    end
+
+    def read_file file_name
+      home_sweet_home = File.expand_path File.dirname __FILE__
+      ultimate_pathway = File.join home_sweet_home, '/twitter_bot_generator/templates/', "#{file_name}.erb"
+      File.read ultimate_pathway
     end
 
   end
