@@ -27,7 +27,7 @@ class TestTwitterBotGenerator <  MiniTest::Test
   def test_it_creates_a_gitignore
     assert_equal true, (File.exists? './such_test_bot/.gitignore')
     assert_match /.DS_Store/, (File.read './such_test_bot/.gitignore')
-    assert_match /notes.todo/, (File.read './such_test_bot/.gitignore')
+    assert_match /\*.todo/, (File.read './such_test_bot/.gitignore')
   end
 
   def test_it_creates_a_gemfile
