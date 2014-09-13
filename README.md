@@ -56,16 +56,26 @@ Once your bot has been well tested on the command line you'll need to get it out
 0. SUCCESS! copy the access tokens down to a scratch txt file, but make sure not to commit it to source control/git/etc.! That would be bad because these things are secrets.
 0. From the command line:
 
-    > heroku create
-    > heroku config:set TWITTER_CONSUMER_KEY=INSERT-YR-SECRETS-HERE
-    > heroku config:set TWITTER_CONSUMER_SECRET=INSERT-YR-SECRETS-HERE
-    > heroku config:set TWITTER_ACCESS_TOKEN=INSERT-YR-SECRETS-HERE
-    > heroku config:set TWITTER_ACCESS_SECRET=INSERT-YR-SECRETS-HERE
+```
+heroku create
+
+heroku config:set TWITTER_CONSUMER_KEY=INSERT-YR-SECRETS-HERE
+
+heroku config:set TWITTER_CONSUMER_SECRET=INSERT-YR-SECRETS-HERE
+
+heroku config:set TWITTER_ACCESS_TOKEN=INSERT-YR-SECRETS-HERE
+
+heroku config:set TWITTER_ACCESS_SECRET=INSERT-YR-SECRETS-HERE
+ ```
+
 0. go back to twitter.com and delete yr mobile phone from the bot account. you may also want to disable email notifications as well.
 0. THE MAIN EVENT:
 
-    > git push heroku master
-    > heroku ps:scale bot=1
+```
+git push heroku master
+heroku ps:scale bot=1
+```
+
 0. go to your bot's page and you should see it's first tweet! Or something?
 
 This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) and more details and documentation and such will be there when things happen. :dancers:
