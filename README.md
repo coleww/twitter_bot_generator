@@ -1,6 +1,10 @@
 # twitter_bot_generator
 
+
+[![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator)
+
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
+
 
 ## Installation
 
