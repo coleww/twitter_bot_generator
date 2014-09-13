@@ -24,8 +24,8 @@ class TwitterBotGenerator
       puts 'done generating! your turn now!'
       puts "$ cd #{bot_name}"
       puts '$ bundle install'
-      puts '$ ./test.rb'
-      puts '$ ./spec.rb'
+      puts '$ ruby test.rb'
+      puts '$ ruby spec.rb'
       puts 'HAVE FUN BE SAFE PLAY NICE'
     end
 
