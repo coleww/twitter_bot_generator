@@ -47,7 +47,7 @@ class TwitterBotGenerator
         'test.rb' => (render_code 'test.rb', varz),
         "test/#{bot_name}_test.rb" => (render_code 'test/test_bot_test.rb', varz),
         "src/#{bot_name}.rb" => (render_code 'src/test_bot.rb', varz),
-        'lib/.gitkeep' => 'lol'
+        'lib/greetings.txt' => (render_code 'lib/greetings.txt', varz)
       }
     end
 
