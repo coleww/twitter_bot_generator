@@ -61,7 +61,9 @@ Once your bot has been well tested on the command line you'll need to get it out
 0. click create a new app
 0. fill in the details. just put down the github repo link or twitter page for the bot as website/callback url. no one will ever see this except you.
 0. once your app is created, click "modify app permissions" and set the app to read and write
-0. wait a lil bit to get access tokens
+0. wait a lil bit for permissions to change.......
+0. click 'generate my access token'
+0. wait a lil bit to get access tokens.....
 0. SUCCESS! copy the access tokens down to a scratch txt file, but make sure not to commit it to source control/git/etc.! That would be bad because these things are secrets.
 0. From the command line:
 
