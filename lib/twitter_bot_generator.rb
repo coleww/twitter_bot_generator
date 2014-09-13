@@ -39,24 +39,25 @@ class TwitterBotGenerator
       varz = grab_a_binding_for bot_name
       {
         'bot.rb' => (render_code 'bot.rb', varz),
-        '.gitignore' => ".DS_Store\n*/.DS_Store\nnotes.todo\n",
-        'Gemfile' => "source 'https://rubygems.org'\nruby '2.0.0'\ngem 'twitter'\n",
-        'README.md' => "\# #{bot_name}\nA Twitter Bot",
-        'Procfile' => "bot: ruby bot.rb\n",
-        'spec.rb' => "#!/usr/bin/env ruby\nrequire_relative 'src/#{bot_name}'\n12.times { puts #{camelize bot_name}.generate }",
-        'test.rb' => "#!/usr/bin/env ruby\n\nDir.glob('./test/*_test.rb').each { |file| require file }",
-        "test/#{bot_name}_test.rb" => "require 'minitest/autorun'\nrequire_relative '../src/#{bot_name}.rb'\n\nclass Test#{camelize bot_name} <  MiniTest::Test\n  def test_generate_returns_hello_world\n    assert_match /Hello/, #{camelize bot_name}.generate\n  end\n  def test_hides_greetings\n    refute_respond_to #{camelize bot_name}, :greetings\n  end\n  def test_hides_io_metal\n    refute_respond_to #{camelize bot_name}, :load_txt_file\n  end\nend",
-        "src/#{bot_name}.rb" => "class #{camelize bot_name}\n\n  class << self\n\n    def generate\n      greetings.sample\n    end\n\n  protected\n\n    def greetings\n      ['Hello World!', 'Hello Twitter!', 'Hello Ruby!']\n    end\n\n  private\n\n    def load_txt_file file_name\n      (File.readlines (File.join 'lib', file_name)).map &:strip\n    end\n\n  end\n\nend\n",
+        '.gitignore' => (render_code '.gitignore', varz),
+        'Gemfile' => (render_code 'Gemfile', varz),
+        'README.md' => (render_code 'README.md', varz),
+        'Procfile' => (render_code 'Procfile', varz),
+        'spec.rb' => (render_code 'spec.rb', varz),
+        'test.rb' => (render_code 'test.rb', varz),
+        "test/#{bot_name}_test.rb" => (render_code 'test/test_bot_test.rb', varz),
+        "src/#{bot_name}.rb" => (render_code 'src/test_bot.rb', varz),
         'lib/.gitkeep' => 'lol'
       }
     end
 
     def grab_a_binding_for bot_name
-      OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
+      openstructicon = OpenStruct.new bot_name: bot_name, class_name: (camelize bot_name)
+      openstructicon.instance_eval { binding }
     end
 
     def render_code file_name, varz
-      get_template(file_name).result(varz.instance_eval { binding })
+      (get_template file_name).result varz
     end
 
   private
