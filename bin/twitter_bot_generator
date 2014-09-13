@@ -3,7 +3,13 @@
 require 'twitter_bot_generator'
 
 begin
-  TwitterBotGenerator.generate ARGV[0].gsub('-', '_')
+  if !ARGV[0] || ARGV[0] == '--help'
+    puts 'twitter_bot_generator <yr_bots_name_camel_cased>'
+    puts '## creates a new directory called <yr_bots_name_camel_cased> in the current working directory, '
+    puts 'and fills it with a bunch of boilerplate goodness'
+  else
+    TwitterBotGenerator.generate ARGV[0].gsub('-', '_')
+  end
 rescue
   puts 'something horrible has happened'
 end

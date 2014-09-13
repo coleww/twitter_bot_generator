@@ -9,7 +9,7 @@ require_relative "../lib/twitter_bot_generator.rb"
 # before :all do
 TwitterBotGenerator.generate 'such_test_bot'
 
-MiniTest::Unit.after_tests do
+Minitest.after_run do
   ['./such_test_bot/Gemfile',
     './such_test_bot/README.md',
     './such_test_bot/test.rb',
