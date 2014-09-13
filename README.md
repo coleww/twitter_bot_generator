@@ -3,6 +3,8 @@
 
 [![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator)
 
+[![Coverage Status](https://coveralls.io/repos/coleww/twitter_bot_generator/badge.png?branch=master)](https://coveralls.io/r/coleww/twitter_bot_generator?branch=master)
+
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
 
 
