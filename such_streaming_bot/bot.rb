@@ -21,6 +21,10 @@ loop do
   begin
     puts "starting search"
     TweetStream::Client.new.sample(language: 'en') do |tweet|
+
+      # your bot should have a method called matches?(text)
+      # if a tweet passes your matcher, the bot retweets it!
+
       if SuchStreamingBot.matches? tweet.text
         puts "got one!"
         Twitter.retweet tweet.id
