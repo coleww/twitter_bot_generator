@@ -99,5 +99,11 @@ https://github.com/tweetstream/tweetstream
 
 ## Contribute
 
-    all kinds of issues in the thing to the upper right! =>
-    comment on something if it sounds cool to u
+all kinds of issues in the thing to the upper right! =>
+comment on something if it sounds cool to u
+
+To run ALLLLLL the tests:
+
+    bundle exec rake && bundle exec ruby test/generated_default_bot.rb && bundle exec ruby test/generated_streaming_bot.rb && bundle exec ruby test/generated_userstream_bot.rb
+
+If someone could figure out how to get rake to run each of those things, but re-load the generated bot each time, but without changing the generated bot to use "load", that would be rad.
