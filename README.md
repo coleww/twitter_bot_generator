@@ -87,7 +87,7 @@ heroku ps:scale bot=1
 
 This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) :dancers:
 
-It uses (twitter gem by sferik)[https://github.com/sferik/twitter] and sometimes (tweetstream)[https://github.com/tweetstream/tweetstream] to connect to various parts of twitter, so you can check out their documentations/sources to find other secret tweeting tricks. The twitter api docs are also (...sometimes useful...)[https://dev.twitter.com/overview/documentation].
+It uses [twitter gem by sferik](https://github.com/sferik/twitter) and sometimes [tweetstream](https://github.com/tweetstream/tweetstream) to connect to various parts of twitter, so you can check out their documentations/sources to find other secret tweeting tricks. The twitter api docs are also [...sometimes useful...](https://dev.twitter.com/overview/documentation).
 
 ## Contribute
 
