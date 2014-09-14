@@ -80,7 +80,10 @@ class TwitterBotGenerator
           filz["test/#{bot_name}_test.rb"] = (render_code "streaming-#{bot_name}_test.rb", varz)
           filz["src/#{bot_name}.rb"] = (render_code "streaming-#{bot_name}.rb", varz)
         elsif flag == '--userstream' || flag == '-U'
-          # do this here.
+          filz['bot.rb'] = (render_code 'userstream-bot.rb', varz)
+          filz['spec.rb'] = (render_code 'userstream-spec.rb', varz)
+          filz["test/#{bot_name}_test.rb"] = (render_code "userstream-#{bot_name}_test.rb", varz)
+          filz["src/#{bot_name}.rb"] = (render_code "userstream-#{bot_name}.rb", varz)
         end
       end
     end
