@@ -7,21 +7,45 @@ class TwitterBotGenerator
   class << self
 
     def generate bot_name, flag=''
-      puts "scaffolding a twitter bot named #{bot_name}!"
-      puts "a #{flag[2..-1]} bot!" if flag.empty?
-      Dir.mkdir bot_name
-      dirname = "#{bot_name}/"
-      puts "mkdir #{dirname}"
-      folders.each do |folder|
-        Dir.mkdir dirname + folder
-        puts "mkdir #{dirname + folder}"
+      welcome_message bot_name, flag
+      make_directories! bot_name
+      write_files! bot_name, flag
+      exit_message bot_name
+    end
+
+  protected
+
+    def welcome_message bot_name, flag
+      descriptor = ''
+      if flag == '--streaming' || flag == '-S'
+        descriptor = 'streaming '
+      elsif flag == '--userstream' || flag == '-U'
+        descriptor = 'userstream '
       end
+      puts "scaffolding a #{descriptor}twitter bot named #{bot_name}!"
+    end
+
+    def make_directories! bot_name
+      Dir.mkdir bot_name
+      puts "mkdir #{bot_name}/"
+      folders.each do |folder|
+        folder_path = File.join bot_name, folder
+        Dir.mkdir folder_path
+        puts "mkdir #{folder_path}/"
+      end
+    end
+
+    def write_files! bot_name, flag
       (files bot_name, flag).each do |(file_name, contents)|
-        puts "touch #{dirname}#{file_name}"
-        File.open bot_name + '/' + file_name, 'w' do |f|
+        file_path = File.join bot_name, file_name
+        puts "touch #{file_path}"
+        File.open file_path, 'w' do |f|
           f.write contents
         end
       end
+    end
+
+    def exit_message bot_name
       puts 'done generating! your turn now!'
       puts "$ cd #{bot_name}"
       puts '$ bundle install'
@@ -30,7 +54,7 @@ class TwitterBotGenerator
       puts 'HAVE FUN BE SAFE PLAY NICE'
     end
 
-  protected
+  private
 
     def folders
       %w(lib src test)
@@ -50,11 +74,13 @@ class TwitterBotGenerator
         "src/#{bot_name}.rb" => (render_code 'src/test_bot.rb', varz),
         'lib/greetings.txt' => (render_code 'lib/greetings.txt', varz)
       }.tap do |filz|
-        if flag == '--streaming'
+        if flag == '--streaming' || flag == '-S'
           filz['bot.rb'] = (render_code 'streaming-bot.rb', varz)
           filz['spec.rb'] = (render_code 'streaming-spec.rb', varz)
           filz["test/#{bot_name}_test.rb"] = (render_code "streaming-#{bot_name}_test.rb", varz)
           filz["src/#{bot_name}.rb"] = (render_code "streaming-#{bot_name}.rb", varz)
+        elsif flag == '--userstream' || flag == '-U'
+          # do this here.
         end
       end
     end
@@ -67,8 +93,6 @@ class TwitterBotGenerator
     def render_code file_name, varz
       (get_template file_name).result varz
     end
-
-  private
 
     def camelize str
       ((str.split '_').map &:capitalize).join

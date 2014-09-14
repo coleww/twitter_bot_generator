@@ -10,8 +10,9 @@ begin
     puts 'and fills it with a bunch of boilerplate goodness'
     puts 'for building a bot that says stuff at a semi-random interval'
     puts 'OPTIONAL ALTERNATIVE OPTIONS:'
-    puts '--streaming: generates a bot that listens to the "gardenhose"'
-    puts '--userstream: generates a bot that listens for tweets @ it'
+    puts '--streaming || -S: generates a bot that listens to the "gardenhose"'
+    puts '--userstream || -U: generates a bot that listens for tweets @ it'
+    puts 'have fun be kind to each other thanks goodbye!'
     return 0
   end
 
