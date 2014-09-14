@@ -9,6 +9,10 @@ class Test<%= class_name %> <  MiniTest::Test
     assert_match /Hello/, <%= class_name %>.generate
   end
 
+  def test_generate_returns_less_than_140
+    refute [*0...1000].map { |_| <%= class_name %>.generate }.any?{ |t| t.length > 140 }
+  end
+
   def test_hides_greetings
     refute_respond_to <%= class_name %>, :greetings
     assert_instance_of String, <%= class_name %>.send(:greetings)[0]
