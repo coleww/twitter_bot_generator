@@ -17,23 +17,6 @@ TweetStream.configure do |config|
   config.auth_method        = :oauth
 end
 
-loop do
-  begin
-    puts "starting search"
-    TweetStream::Client.new.sample(language: 'en') do |tweet|
-      if <%= class_name %>.matches? tweet.text
-        puts "got one!"
-        Twitter.retweet tweet.id
-      end
-    end
-  rescue
-    puts 'FAILURE'
-  ensure
-    sleep 300
-  end
-end
-
-
 TweetStream::Client.new.userstream do |tweet|
   puts "@#{tweet.user.screen_name} asks: #{tweet.text}"
   begin
@@ -41,7 +24,5 @@ TweetStream::Client.new.userstream do |tweet|
     Twitter.update(answer, :in_reply_to_status_id => tweet.id)
   rescue => e
     puts e
-  ensure
-    sleep 150
   end
 end
