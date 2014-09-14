@@ -45,8 +45,6 @@ $ ruby spec.rb
 HAVE FUN BE SAFE PLAY NICE
 ```
 
-This will create a skeleton class named YrBotNameSnakeCaseStyleYes, some smokescreen minitest::unit tests, and a variety of other "ruby app on free heroku instance" boiler plate.
-
 ## Deployment (heroku)
 
 Once your bot has been well tested on the command line you'll need to get it out into the world!
@@ -85,17 +83,11 @@ heroku ps:scale bot=1
 
 0. go to your bot's page and you should see it's first tweet! Or something?
 
-This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) and more details and documentation and such will be there when things happen. :dancers:
+## More Resources
 
-Depends on:
+This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) :dancers:
 
-https://github.com/sferik/twitter
-
-And sometimes:
-
-https://github.com/tweetstream/tweetstream
-
-
+It uses (twitter gem by sferik)[https://github.com/sferik/twitter] and sometimes (tweetstream)[https://github.com/tweetstream/tweetstream] to connect to various parts of twitter, so you can check out their documentations/sources to find other secret tweeting tricks. The twitter api docs are also (...sometimes useful...)[https://dev.twitter.com/overview/documentation].
 
 ## Contribute
 
