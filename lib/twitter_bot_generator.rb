@@ -15,7 +15,7 @@ class TwitterBotGenerator
         Dir.mkdir dirname + folder
         puts "mkdir #{dirname + folder}"
       end
-      (files bot_name).each do |(file_name, contents)|
+      (files bot_name, flag).each do |(file_name, contents)|
         puts "touch #{dirname}#{file_name}"
         File.open bot_name + '/' + file_name, 'w' do |f|
           f.write contents
@@ -35,7 +35,7 @@ class TwitterBotGenerator
       %w(lib src test)
     end
 
-    def files bot_name
+    def files bot_name, flag
       varz = grab_a_binding_for bot_name
       {
         'bot.rb' => (render_code 'bot.rb', varz),
@@ -48,7 +48,14 @@ class TwitterBotGenerator
         "test/#{bot_name}_test.rb" => (render_code 'test/test_bot_test.rb', varz),
         "src/#{bot_name}.rb" => (render_code 'src/test_bot.rb', varz),
         'lib/greetings.txt' => (render_code 'lib/greetings.txt', varz)
-      }
+      }.tap do |filz|
+        if flag == '--streaming'
+          filz['bot.rb'] = (render_code 'streaming-bot.rb', varz)
+          filz['spec.rb'] = (render_code 'streaming-spec.rb', varz)
+          filz["test/#{bot_name}_test.rb"] = (render_code "streaming-#{bot_name}_test.rb", varz)
+          filz["src/#{bot_name}.rb"] = (render_code "streaming-#{bot_name}.rb", varz)
+        end
+      end
     end
 
     def grab_a_binding_for bot_name
