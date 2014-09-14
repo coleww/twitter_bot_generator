@@ -3,7 +3,7 @@ class <%= class_name %>
   class << self
 
     def matches? text
-      text =~ /hello world/
+      !!(text =~ /hello world/)
     end
 
   end
