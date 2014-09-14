@@ -3,13 +3,26 @@
 require 'twitter_bot_generator'
 
 begin
-  if !ARGV[0] || ARGV[0] == '--help'
-    puts 'twitter_bot_generator <yr_bots_name_camel_cased>'
+
+  if !ARGV[0] || ARGV.any?{ |a| a == '--help' || a == '-H' }
+    puts 'twitter_bot_generator <yr_bots_name_camel_cased> (--<OPTIONAL OPTION>)'
     puts '## creates a new directory called <yr_bots_name_camel_cased> in the current working directory, '
     puts 'and fills it with a bunch of boilerplate goodness'
+    puts 'for building a bot that says stuff at a semi-random interval'
+    puts 'OPTIONAL ALTERNATIVE OPTIONS:'
+    puts '--streaming || -S: generates a bot that listens to the "gardenhose"'
+    puts '--userstream || -U: generates a bot that listens for tweets @ it'
+    puts 'have fun be kind to each other thanks goodbye!'
   else
-    TwitterBotGenerator.generate ARGV[0].gsub('-', '_')
+
+    bot_name = ARGV[0].downcase.gsub(/[^a-z]/, '_')
+
+    TwitterBotGenerator.generate bot_name, ARGV[1] || ''
+
   end
+
 rescue
+
   puts 'something horrible has happened'
+
 end
