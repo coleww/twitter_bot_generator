@@ -5,8 +5,7 @@ Coveralls.wear!
 
 require_relative "../lib/twitter_bot_generator.rb"
 
-# before :all do
-
+def wipe_such_test_bot!
   ['./such_test_bot/Gemfile',
     './such_test_bot/README.md',
     './such_test_bot/test.rb',
@@ -22,5 +21,5 @@ require_relative "../lib/twitter_bot_generator.rb"
     './such_test_bot/src',
     './such_test_bot/test',
     './such_test_bot'].each { |dir| Dir.rmdir dir if Dir.exists? dir}
-
-TwitterBotGenerator.generate 'such_test_bot'
+  true
+end

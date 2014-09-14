@@ -1,5 +1,8 @@
 require_relative 'test_helper'
 
+wipe_such_test_bot!
+TwitterBotGenerator.generate 'such_test_bot'
+
 class TestTwitterBotGenerator <  MiniTest::Test
 
   def test_it_creates_an_app_directory
