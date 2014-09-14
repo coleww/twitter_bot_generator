@@ -87,6 +87,16 @@ heroku ps:scale bot=1
 
 This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-tutorial) and more details and documentation and such will be there when things happen. :dancers:
 
+Depends on:
+
+https://github.com/sferik/twitter
+
+And sometimes:
+
+https://github.com/tweetstream/tweetstream
+
+
+
 ## Contribute
 
     all kinds of issues in the thing to the upper right! =>
