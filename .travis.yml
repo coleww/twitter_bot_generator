@@ -4,7 +4,7 @@ cache: bundler
 rvm:
   - 2.0.0
 
-script: 'bundle exec rake'
+script: 'bundle exec rake && ruby test/generated_streaming_bot.rb && ruby test/generated_userstream_bot.rb'
 
 notifications:
   email:
