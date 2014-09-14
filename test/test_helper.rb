@@ -5,27 +5,21 @@ Coveralls.wear!
 
 require_relative "../lib/twitter_bot_generator.rb"
 
-def wipe_such_test_bot!
-  ['./such_test_bot/Gemfile',
-    './such_test_bot/README.md',
-    './such_test_bot/test.rb',
-    './such_test_bot/Procfile',
-    './such_test_bot/bot.rb',
-    './such_test_bot/spec.rb',
-    './such_test_bot/test/such_test_bot_test.rb',
-    './such_test_bot/lib/greetings.txt',
-    './such_test_bot/src/such_test_bot.rb',
-    './such_test_bot/.gitignore'].each { |file| File.unlink file if File.exists? file }
+def wipe_such_test_bot! type='test'
+  ["./such_#{type}_bot/Gemfile",
+    "./such_#{type}_bot/README.md",
+    "./such_#{type}_bot/test.rb",
+    "./such_#{type}_bot/Procfile",
+    "./such_#{type}_bot/bot.rb",
+    "./such_#{type}_bot/spec.rb",
+    "./such_#{type}_bot/test/such_#{type}_bot_test.rb",
+    "./such_#{type}_bot/lib/greetings.txt",
+    "./such_#{type}_bot/src/such_#{type}_bot.rb",
+    "./such_#{type}_bot/.gitignore"].each { |file| File.unlink file if File.exists? file }
 
-  ['./such_test_bot/lib',
-    './such_test_bot/src',
-    './such_test_bot/test',
-    './such_test_bot'].each { |dir| Dir.rmdir dir if Dir.exists? dir}
+  ["./such_#{type}_bot/lib",
+    "./such_#{type}_bot/src",
+    "./such_#{type}_bot/test",
+    "./such_#{type}_bot"].each { |dir| Dir.rmdir dir if Dir.exists? dir}
   true
-end
-
-Minitest.after_run do
-  # leave behind a default scaffold ALWAYS
-  wipe_such_test_bot!
-  TwitterBotGenerator.generate 'such_test_bot'
 end
