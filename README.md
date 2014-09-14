@@ -45,7 +45,22 @@ $ ruby spec.rb
 HAVE FUN BE SAFE PLAY NICE
 ```
 
+
+## Some bots made with this gem
+
+Make a PR against this repo to add yrs!
+
+[dada bot](https://github.com/coleww/dadabot) tweets simple things related to dadaism
+
+[MiniTest::Warner](https://github.com/coleww/mini_test_warner_bot) tweets more complex phrases, it makes up fake deprecation warnings
+
+[adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
+
+[cole_bot](https://github.com/coleww/cole_bot) periodically posts to my personal twitter based on a markov chain made out of things i have tweeted/tumbled/etc.
+
 ## More Resources
+
+Check out the source and deployment notes for these generated [default](https://github.com/coleww/twitter_bot_generator/tree/master/such_test_bot),  [streaming](https://github.com/coleww/twitter_bot_generator/tree/master/such_streaming_bot), and [userstream](https://github.com/coleww/twitter_bot_generator/tree/master/such_userstream_bot) example bots.
 
 This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-bot-tutorial) :dancers:
 
