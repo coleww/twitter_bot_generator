@@ -6,7 +6,7 @@ class TwitterBotGenerator
 
   class << self
 
-    def generate bot_name
+    def generate bot_name, flag=''
       puts "scaffolding a twitter bot that is named #{bot_name}!"
       Dir.mkdir bot_name
       dirname = "#{bot_name}/"
