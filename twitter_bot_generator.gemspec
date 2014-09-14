@@ -9,7 +9,23 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Cole Willsea"]
   spec.email         = ["coleww@gmail.com"]
   spec.summary       = %q{Generates a twitter bot template from command line.}
-  spec.description   = %q{gem install twitter_bot_generator && twitter_bot_generator new_twitter_bot}
+  spec.description   = <<-EOF
+    Scaffolds a new boilerplate twitter bot project from the command line.
+    By default will create a bot that tweets a "hello world" type greeting once every 3-4.5 hours
+    Can also pass a --streaming flag to create a bot that listens to the "gardenhose"
+    Or a --userstream flag for a bot that listens for tweets @ it.
+    To use:
+
+      $ gem install twitter_bot_generator
+      $ twitter_bot_generator --help
+      $ twitter_bot_generator my_new_bot
+      $ cd my_new_bot
+      $ bundle install
+      $ ruby test.rb
+      $ ruby spec.rb
+
+    etc.
+  EOF
   spec.homepage      = "https://github.com/coleww/twitter_bot_generator"
   spec.license       = "MIT"
 
