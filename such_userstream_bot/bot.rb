@@ -21,7 +21,6 @@ TweetStream::Client.new.userstream do |tweet|
 
   # your bot should have a method called respond_to(text)
   # when someone tweets @ your bot, it will reply back!
-
   puts "@#{tweet.user.screen_name} asks: #{tweet.text}"
   begin
     puts (answer = SuchUserstreamBot.respond_to tweet.text)
