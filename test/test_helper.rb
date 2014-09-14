@@ -23,3 +23,9 @@ def wipe_such_test_bot!
     './such_test_bot'].each { |dir| Dir.rmdir dir if Dir.exists? dir}
   true
 end
+
+Minitest.after_run do
+  # leave behind a default scaffold ALWAYS
+  wipe_such_test_bot!
+  TwitterBotGenerator.generate 'such_test_bot'
+end
