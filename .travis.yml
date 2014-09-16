@@ -4,7 +4,7 @@ cache: bundler
 rvm:
   - 2.0.0
 
-script: 'bundle exec rake && cd such_test_bot && ruby test.rb'
+script: 'bundle exec rake && cd such_test_bot && bundle install && ruby test.rb'
 
 notifications:
   email:
