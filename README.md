@@ -46,6 +46,8 @@ HAVE FUN BE SAFE PLAY NICE
 
 Make a PR against this repo to add yrs!
 
+[FriendFeld](https://github.com/coleww/friendfeld) mashes up friends and seinfeld episode titles
+
 [dada bot](https://github.com/coleww/dadabot) tweets simple things related to dadaism
 
 [MiniTest::Warner](https://github.com/coleww/mini_test_warner_bot) tweets more complex phrases, it makes up fake deprecation warnings
