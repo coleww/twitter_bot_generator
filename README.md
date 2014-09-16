@@ -1,10 +1,6 @@
 # twitter_bot_generator
 
-[![Gem Version](https://badge.fury.io/rb/twitter_bot_generator.svg)](http://badge.fury.io/rb/twitter_bot_generator)
-
-[![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator)
-
-[![Coverage Status](https://coveralls.io/repos/coleww/twitter_bot_generator/badge.png?branch=master)](https://coveralls.io/r/coleww/twitter_bot_generator?branch=master)
+[![Gem Version](https://badge.fury.io/rb/twitter_bot_generator.svg)](http://badge.fury.io/rb/twitter_bot_generator) [![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator) [![Coverage Status](https://coveralls.io/repos/coleww/twitter_bot_generator/badge.png?branch=master)](https://coveralls.io/r/coleww/twitter_bot_generator?branch=master)
 
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
 
