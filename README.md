@@ -46,6 +46,10 @@ HAVE FUN BE SAFE PLAY NICE
 
 Make a PR against this repo to add yrs!
 
+[NPM generator](https://github.com/coleww/npm-bot-dude) invents new uses/meanings for NPM
+
+[Hot New Superpowers!](https://github.com/coleww/power_bot) invents new super powers through markov magic
+
 [FriendFeld](https://github.com/coleww/friendfeld) mashes up friends and seinfeld episode titles
 
 [dada bot](https://github.com/coleww/dadabot) tweets simple things related to dadaism
