@@ -15,7 +15,8 @@ def wipe_such_test_bot! type='test'
     "./such_#{type}_bot/test/such_#{type}_bot_test.rb",
     "./such_#{type}_bot/lib/greetings.txt",
     "./such_#{type}_bot/src/such_#{type}_bot.rb",
-    "./such_#{type}_bot/.gitignore"].each { |file| File.unlink file if File.exists? file }
+    "./such_#{type}_bot/.gitignore",
+    "./such_#{type}_bot/.travis.yml"].each { |file| File.unlink file if File.exists? file }
 
   ["./such_#{type}_bot/lib",
     "./such_#{type}_bot/src",
