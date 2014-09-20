@@ -48,7 +48,7 @@ class TestTwitterBotGenerator <  MiniTest::Test
 
   def test_it_creates_a_readme
     assert_equal true, (File.exists? './such_test_bot/README.md')
-    assert_match /\# such_test_bot\nA Twitter Bot/, (File.read './such_test_bot/README.md')
+    assert_match /\# such_test_bot\n\nA Twitter Bot/, (File.read './such_test_bot/README.md')
   end
 
   def test_it_creates_a_procfile
