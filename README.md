@@ -77,10 +77,12 @@ Make a PR against this repo to add yrs!
 *  [adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
 
 
-## holla
-
-It uses [twitter gem by sferik](https://github.com/sferik/twitter) and sometimes [tweetstream](https://github.com/tweetstream/tweetstream) to connect to various parts of twitter, so you can check out their documentations/sources to find other secret tweeting tricks. The twitter api docs are also [...sometimes useful...](https://dev.twitter.com/overview/documentation).
-
 ## Contribute
 
 Comments and suggestions are super welcome! Open an issue or comment on an existing one :+1: 
+
+
+## further hacking and academic research
+
+Check out docs/sauce for [twitter gem by sferik](https://github.com/sferik/twitter) /// [tweetstream](https://github.com/tweetstream/tweetstream) /// [twitter api](https://dev.twitter.com/overview/documentation).
+
