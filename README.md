@@ -1,6 +1,6 @@
 # twitter_bot_generator
 
-[![Gem Version](https://badge.fury.io/rb/twitter_bot_generator.svg)](http://badge.fury.io/rb/twitter_bot_generator) [![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator) [![Coverage Status](https://coveralls.io/repos/coleww/twitter_bot_generator/badge.png?branch=master)](https://coveralls.io/r/coleww/twitter_bot_generator?branch=master)
+[![Gem Version](https://badge.fury.io/rb/twitter_bot_generator.svg)](http://badge.fury.io/rb/twitter_bot_generator) [![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator) 
 
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
 
@@ -53,6 +53,10 @@ $ ruby spec.rb
 HAVE FUN BE SAFE PLAY NICE
 ```
 
+## More Resources
+
+The source is short and hopefully self-explanatory, but if not there is also the :dancer: [twitter-art-robot-tutorial](http://github.com/coleww/twitter-art-bot-tutorial) :dancers: to guide you. Or open an issue on this repo if you need help!
+
 
 ## Some bots made with this gem
 
@@ -73,15 +77,10 @@ Make a PR against this repo to add yrs!
 [adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
 
 
-## More Resources
-
-Check out the source and deployment notes for these generated [default](https://github.com/coleww/twitter_bot_generator/tree/master/such_test_bot),  [streaming](https://github.com/coleww/twitter_bot_generator/tree/master/such_streaming_bot), and [userstream](https://github.com/coleww/twitter_bot_generator/tree/master/such_userstream_bot) example bots.
-
-This gem was made for use in the twitter-art-robot-[tutorial](http://github.com/coleww/twitter-art-bot-tutorial) :dancers:
+## holla
 
 It uses [twitter gem by sferik](https://github.com/sferik/twitter) and sometimes [tweetstream](https://github.com/tweetstream/tweetstream) to connect to various parts of twitter, so you can check out their documentations/sources to find other secret tweeting tricks. The twitter api docs are also [...sometimes useful...](https://dev.twitter.com/overview/documentation).
 
 ## Contribute
 
-all kinds of issues in the thing to the upper right! =>
-comment on something if it sounds cool to u
+Comments and suggestions are super welcome! Open an issue or comment on an existing one :+1: 
