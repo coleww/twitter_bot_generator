@@ -3,7 +3,7 @@ require 'minitest/pride'
 
 require_relative '../src/such_test_bot.rb'
 
-class TestSuchTestBot <  MiniTest::Test
+class TestSuchTestBot <  Minitest::Test
 
   def test_generate_returns_hello_world
     assert_match /Hello/, SuchTestBot.generate

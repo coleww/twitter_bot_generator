@@ -3,7 +3,7 @@ require 'minitest/pride'
 
 require_relative '../src/such_streaming_bot.rb'
 
-class TestSuchStreamingBot <  MiniTest::Test
+class TestSuchStreamingBot <  Minitest::Test
 
   def test_matches_hello_world
     assert_equal true, (SuchStreamingBot.matches? 'hello world')
