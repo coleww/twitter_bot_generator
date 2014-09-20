@@ -11,12 +11,24 @@
 
 ## Usage
 
+get --help
+
 ```
 $ twitter_bot_generator --help
-twitter_bot_generator <yr_bots_name_camel_cased>
+twitter_bot_generator <yr_bots_name_camel_cased> (--<OPTIONAL OPTION>)
 ## creates a new directory called <yr_bots_name_camel_cased> in the current working directory,
 and fills it with a bunch of boilerplate goodness
+for building a bot that says stuff at a semi-random interval
+OPTIONAL ALTERNATIVE OPTIONS:
+--streaming || -S: generates a bot that listens to the "gardenhose"
+--userstream || -U: generates a bot that listens for tweets @ it
+have fun be kind to each other thanks goodbye!
+```
 
+
+make a bot
+
+```
 $ twitter_bot_generator wat_fun
 scaffolding a twitter bot that is named wat_fun!
 mkdir wat_fun/
