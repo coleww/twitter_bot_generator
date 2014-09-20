@@ -3,7 +3,7 @@ require 'minitest/pride'
 
 require_relative '../src/<%= bot_name %>.rb'
 
-class Test<%= class_name %> <  MiniTest::Test
+class Test<%= class_name %> <  Minitest::Test
 
   def test_reverses_hello_world
     assert_match (<%= class_name %>.respond_to 'hello world'), 'dlrow olleh'
