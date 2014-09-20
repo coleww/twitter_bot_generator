@@ -62,19 +62,19 @@ The source is short and hopefully self-explanatory, but if not there is also the
 
 Make a PR against this repo to add yrs!
 
-[no more meta art](https://github.com/coleww/meta_art_bot) reminds me to stop making projects that are just silly in-jokes
+*  [no more meta art](https://github.com/coleww/meta_art_bot) reminds me to stop making projects that are just silly in-jokes
 
-[NPM generator](https://github.com/coleww/npm-bot-dude) invents new uses/meanings for NPM
+*  [NPM generator](https://github.com/coleww/npm-bot-dude) invents new uses/meanings for NPM
 
-[Hot New Superpowers!](https://github.com/coleww/power_bot) invents new super powers through markov magic
+*  [Hot New Superpowers!](https://github.com/coleww/power_bot) invents new super powers through markov magic
 
-[FriendFeld](https://github.com/coleww/friendfeld) mashes up friends and seinfeld episode titles
+*  [FriendFeld](https://github.com/coleww/friendfeld) mashes up friends and seinfeld episode titles
 
-[dada bot](https://github.com/coleww/dadabot) tweets simple things related to dadaism
+*  [dada bot](https://github.com/coleww/dadabot) tweets simple things related to dadaism
 
-[MiniTest::Warner](https://github.com/coleww/mini_test_warner_bot) tweets more complex phrases, it makes up fake deprecation warnings
+*  [MiniTest::Warner](https://github.com/coleww/mini_test_warner_bot) tweets more complex phrases, it makes up fake deprecation warnings
 
-[adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
+*  [adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
 
 
 ## holla
