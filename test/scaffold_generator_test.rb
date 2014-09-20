@@ -29,6 +29,12 @@ class TestTwitterBotGenerator <  MiniTest::Test
     assert_match /SuchTestBot.generate/, (File.read './such_test_bot/bot.rb')
   end
 
+  def test_it_creates_a_travis_for_lulz
+    assert_equal true, (File.exists? './such_test_bot/.travis.yml')
+    assert_match /bundle exec ruby test/, (File.read './such_test_bot/.travis.yml')
+    assert_match /2\.0\.0/, (File.read './such_test_bot/.travis.yml')
+  end
+
   def test_it_creates_a_gitignore
     assert_equal true, (File.exists? './such_test_bot/.gitignore')
     assert_match /.DS_Store/, (File.read './such_test_bot/.gitignore')
@@ -42,7 +48,7 @@ class TestTwitterBotGenerator <  MiniTest::Test
 
   def test_it_creates_a_readme
     assert_equal true, (File.exists? './such_test_bot/README.md')
-    assert_match /\# such_test_bot\nA Twitter Bot/, (File.read './such_test_bot/README.md')
+    assert_match /\# such_test_bot\n\nA Twitter Bot/, (File.read './such_test_bot/README.md')
   end
 
   def test_it_creates_a_procfile

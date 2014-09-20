@@ -65,6 +65,7 @@ class TwitterBotGenerator
       {
         'bot.rb' => (render_code 'bot.rb', varz),
         '.gitignore' => (render_code '.gitignore', varz),
+        '.travis.yml' => (render_code '.travis.yml', varz),
         'Gemfile' => (render_code 'Gemfile', varz),
         'README.md' => (render_code 'README.md', varz),
         'Procfile' => (render_code 'Procfile', varz),
