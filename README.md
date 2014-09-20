@@ -58,6 +58,8 @@ HAVE FUN BE SAFE PLAY NICE
 
 Make a PR against this repo to add yrs!
 
+[no more meta art](https://github.com/coleww/meta_art_bot) reminds me to stop making projects that are just silly in-jokes
+
 [NPM generator](https://github.com/coleww/npm-bot-dude) invents new uses/meanings for NPM
 
 [Hot New Superpowers!](https://github.com/coleww/power_bot) invents new super powers through markov magic
@@ -70,7 +72,6 @@ Make a PR against this repo to add yrs!
 
 [adams song bot](https://github.com/coleww/adams_song_bot) retweets tweets that match lyrics from adams song by blink 182
 
-[cole_bot](https://github.com/coleww/cole_bot) periodically posts to my personal twitter based on a markov chain made out of things i have tweeted/tumbled/etc.
 
 ## More Resources
 
