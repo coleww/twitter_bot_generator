@@ -1,5 +1,18 @@
 # twitter_bot_generator
 
+# DEPRECATED
+
+this gem used to exploit heroku's infinite free dynos to run itself, but those days are over now. You can probably easily modify the generated code to be more cron-friendly, but i'm doing everything in node now so HAVE FUN BYE
+
+
+
+
+
+
+-----------------------------------------------------------------
+
+
+
 [![Gem Version](https://badge.fury.io/rb/twitter_bot_generator.svg)](http://badge.fury.io/rb/twitter_bot_generator) [![Build Status](https://travis-ci.org/coleww/twitter_bot_generator.svg?branch=master)](https://travis-ci.org/coleww/twitter_bot_generator) 
 
 #### I GENERATE TWITTER BOTS! RUBY IS JOY!
